@@ -1,0 +1,1 @@
+print('im imported from lib/text.p8')

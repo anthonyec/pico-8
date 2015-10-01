@@ -1,0 +1,17 @@
+{
+  "name": "import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gaze": "^0.5.1",
+    "q": "^1.4.1",
+    "underscore": "^1.8.3",
+    "watchr": "^2.4.13"
+  }
+}
