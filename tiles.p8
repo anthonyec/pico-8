@@ -108,12 +108,20 @@ function sprite_animation(x, y, startFrame, endFrame, speed)
 	return animation
 end
 
+local animations = {}
+
 function _init()
 	sfx(1, 1)
 
 	player = make_actor(peek(0x4300), peek(0x4301))
 
 	animation = sprite_animation(25, 25, 18, 21, 5)
+
+	for i=0, 15 do
+		local animation = sprite_animation(i*8, 60, 18, 21, 1+i)
+
+		add(animations, animation)
+	end
 end
 
 local t = 0
@@ -138,6 +146,10 @@ function _update()
 	animation.y = player.y
 
 	animation.update()
+
+	for i in all(animations) do
+		i.update()
+	end
 
 	local a = get_tile(player.x, player.y)
 	local b = get_tile(player.x+7, player.y)
